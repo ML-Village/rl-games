@@ -1,0 +1,16 @@
+version: "3"
+services:
+  pacman-ghost:
+    image: pacman-ghost:latest
+    container_name: pacman-ghost
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - 8881:8881
+    command: bash
+    #tty: true 
+    #stdin_open: true
+    volumes:
+      - .:/home
